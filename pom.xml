@@ -2,10 +2,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	
-	<groupId>com.hd</groupId>
+	<groupId>com.mt.services</groupId>
 	<artifactId>maven-web-application</artifactId>
 	<packaging>war</packaging>
-	<version>1.0</version>
+	<version>1.1</version>
 	
 	<name>maven-web-application</name>
 
@@ -21,9 +21,9 @@
 		<spring.version>5.1.2.RELEASE</spring.version>
 		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version>
-		<!-- <sonar.host.url>http://13.232.5.182:9000/</sonar.host.url>
+		<sonar.host.url>http://3.141.5.122:9000/</sonar.host.url>
 		<sonar.login>admin</sonar.login>
-		<sonar.password>admin</sonar.password> -->
+		<sonar.password>admin</sonar.password>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
@@ -93,20 +93,27 @@
 		
 	</dependencies>
 	
+	<repositories>
+		<repository>
+		  <id>nexus</id>
+	      <url>http://localhost:8082/nexus/repository/flipkart-proxy/</url>
+		
+		</repository>
+	</repositories>
+	
 	<distributionManagement>
+	    <snapshotRepository>
+	      <id>nexus</id>
+	      <name>HD SolutionsSnapshot Nexus Repository </name>
+	      <url>http://localhost:8081/repository/flipkart-snapshot/</url>
+	    </snapshotRepository>
 	
 	    <repository>
 	      <id>nexus</id>
 	      <name>HD SolutionsReleases Nexus Repository</name>
-	      <url>http://ec2-3-143-110-5.us-east-2.compute.amazonaws.com:8081/repository/flipkart-release/</url>
+	      <url>http://localhost:8081/repository/filpkart-release/</url>
 	    </repository>
-	    
-	    <snapshotRepository>
-	      <id>nexus</id>
-	      <name>HD SolutionsSnapshot Nexus Repository </name>
-	      <url>http://ec2-3-143-110-5.us-east-2.compute.amazonaws.com:8081/repository/flipkart-snapshot/</url>
-	    </snapshotRepository>
-	    
+  
 	</distributionManagement>
 	
 	<build>
