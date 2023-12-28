@@ -28,6 +28,12 @@ stage('compile'){
   sh  "mvn clean package"
   }
   }
+
+stage('clenaup workspace'){
+	steps{
+		cleanWs()
+	}
+}
 	
 }  
 }//Pipeline closing
