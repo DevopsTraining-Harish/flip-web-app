@@ -23,5 +23,11 @@ stages{
 	git branch: 'main', url: 'https://github.com/DevopsTraining-Harish/flip-web-app.git'
 	}
   }
+stage('compile'){
+  steps{
+  sh  "mvn clean package"
+  }
+  }
+	
 }  
 }//Pipeline closing
