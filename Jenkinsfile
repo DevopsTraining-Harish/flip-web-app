@@ -25,9 +25,17 @@ stages{
   }
 stage('compile'){
   steps{
-  sh  "mvn clean package"
+  sh  "mvn clean package -DskipTests"
   }
   }
+
+stage('Junit'){
+	steps{
+		sh 'mvn compile test'
+	}
+	
+
+}
 
 stage('clenaup workspace'){
 	steps{
